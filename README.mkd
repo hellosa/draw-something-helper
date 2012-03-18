@@ -1,0 +1,10 @@
+###README
+Guess the word in the "DrawSomething" app.
+
+**require pyenchant**
+
+#####EXAMPLE:
+We get "balsslnekjor", and 6 buckets.
+
+`python drawsth.py -l balsslnekjor -L 6`
+
