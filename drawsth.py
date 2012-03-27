@@ -14,7 +14,11 @@ def possible_word (letters, length) :
         for i in perm : 
             possible += i
         if d.check(possible):
-            print possible
+            if not possible in c:
+                c.append(possible)
+    for i in c:
+        print i
+
 
 
 def usage():
