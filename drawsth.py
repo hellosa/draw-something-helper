@@ -12,10 +12,12 @@ words = set([])
 
 def possible_word (letters, length) :
     rlength = int(length)
-    for perm in list(itertools.permutations(letters, rlength)):
-        possible = "".join(perm)
-        if d.check(possible):
-            if possible not in words:
+    for perm in itertools.permutations(letters, rlength):
+        possible = ""
+        for i in perm :
+            possible += i
+        if d.check(possible) :
+            if possible not in words :
                 words.add(possible)
                 print possible
 
