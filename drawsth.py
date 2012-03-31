@@ -5,21 +5,19 @@ import enchant
 import itertools
 import getopt
 
+# http://www.ams.sunysb.edu/~duowang/draw.py
+
 d = enchant.Dict("en_US")
+words = set([])
 
 def possible_word (letters, length) :
     rlength = int(length)
-    for perm in itertools.permutations(letters, rlength):
-        possible = ""
-        for i in perm : 
-            possible += i
+    for perm in list(itertools.permutations(letters, rlength)):
+        possible = "".join(perm)
         if d.check(possible):
-            if not possible in c:
-                c.append(possible)
-    for i in c:
-        print i
-
-
+            if possible not in words:
+                words.add(possible)
+                print possible
 
 def usage():
     print "Example: python drawsth.py -l xxxxxx -L 3"
@@ -59,4 +57,5 @@ def main() :
 
 if __name__ == "__main__":
     main()
+
 
